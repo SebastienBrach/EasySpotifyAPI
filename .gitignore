@@ -1,5 +1,6 @@
 .DS_Store
 .env
+vendor/
 
 #-------------------------
 # Temporary Files
@@ -35,11 +36,6 @@ tests/coverage*
 
 # Don't save phpunit under version control.
 phpunit
-
-#-------------------------
-# Composer
-#-------------------------
-vendor/
 
 # Visual Studio Code
 .vscode/
