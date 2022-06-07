@@ -24,7 +24,7 @@ class App extends BaseConfig
      *
      * @var string
      */
-    public $baseURL = $_ENV['BASE_URL'];
+    public $baseURL = '';
 
     /**
      * --------------------------------------------------------------------------
