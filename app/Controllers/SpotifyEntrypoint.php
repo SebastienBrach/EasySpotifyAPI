@@ -15,9 +15,9 @@ class SpotifyEntrypoint extends BaseController
 
     private function setSpotifySession(){
         $this->spotifySession = new \SpotifyWebAPI\Session(
-            'bbd636c28a7f4b9f875948046b3021f6',
-            'f03f9ac87576486d82168c602fd7cea3',
-            'http://localhost/auth'
+            $_ENV['SPOTIFY_CLIENT_ID'],
+            $_ENV['SPOTIFY_CLIENT_SECRET'],
+            $_ENV['SPOTIFY_REDIRECT_CALLBACK']
         );
     }
 
@@ -27,27 +27,7 @@ class SpotifyEntrypoint extends BaseController
 
     private function setSpotifyOptions(){
         $this->spotifyOptions = [
-            'scope' => [
-                'ugc-image-upload',
-                'user-modify-playback-state',
-                'user-read-playback-state',
-                'user-read-currently-playing',
-                'user-follow-modify',
-                'user-follow-read',
-                'user-read-recently-played',
-                'user-read-playback-position',
-                'user-top-read',
-                'playlist-read-collaborative',
-                'playlist-modify-public',
-                'playlist-read-private',
-                'playlist-modify-private',
-                'app-remote-control',
-                'streaming',
-                'user-read-private',
-                'user-read-email',
-                'user-library-modify',
-                'user-library-read'
-            ],
+            'scope' => [$_ENV['SPOTIFY_SCOPES']],
             'state' => $this->spotifyState,
         ];
     }
@@ -55,7 +35,6 @@ class SpotifyEntrypoint extends BaseController
     private function setCodeIgniterSession(){
         \Config\Services::session();
         $_SESSION['spotifyStare'] = $this->spotifyState;
-        // $_SESSION['spotifyOptions'] = $this->spotifyOptions;
     }
 
     private function setRedirectionToCallbackSpotify(){
