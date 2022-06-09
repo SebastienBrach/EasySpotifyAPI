@@ -28,8 +28,25 @@ class SpotifyEntrypoint extends BaseController
     private function setSpotifyOptions(){
         $this->spotifyOptions = [
             'scope' => [
+                'ugc-image-upload',
+                'user-modify-playback-state',
+                'user-read-playback-state',
+                'user-read-currently-playing',
+                'user-follow-modify',
+                'user-follow-read',
+                'user-read-recently-played',
+                'user-read-playback-position',
+                'user-top-read',
+                'playlist-read-collaborative',
+                'playlist-modify-public',
                 'playlist-read-private',
+                'playlist-modify-private',
+                'app-remote-control',
+                'streaming',
                 'user-read-private',
+                'user-read-email',
+                'user-library-modify',
+                'user-library-read'
             ],
             'state' => $this->spotifyState,
         ];
