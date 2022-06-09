@@ -21,7 +21,6 @@ class SpotifyUser extends BaseController
         echo '<pre>';
         // var_dump($this->spotifyAPI->me());
         var_dump($this->spotifyAPI->getMyDevices());
-        var_dump($_ENV);
         // var_dump($this->spotifyAPI->getTrack('4uLU6hMCjMI75M1A2tKUQC'));
         echo '</pre>';
     }
