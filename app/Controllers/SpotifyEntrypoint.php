@@ -2,7 +2,7 @@
 
 namespace App\Controllers;
 
-class Home extends BaseController
+class SpotifyEntrypoint extends BaseController
 {
     public function index()
     {
@@ -10,7 +10,7 @@ class Home extends BaseController
         $session = new \SpotifyWebAPI\Session(
             'bbd636c28a7f4b9f875948046b3021f6',
             'f03f9ac87576486d82168c602fd7cea3',
-            'http://localhost/callback'
+            'http://localhost/auth'
         );
 
         $_SESSION['state'] = $session->generateState();
