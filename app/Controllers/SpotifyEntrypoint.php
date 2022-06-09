@@ -37,8 +37,8 @@ class SpotifyEntrypoint extends BaseController
 
     private function setCodeIgniterSession(){
         \Config\Services::session();
-        $_SESSION['state'] = $this->spotifyState;
-        $_SESSION['options'] = $this->spotifyOptions;
+        $_SESSION['spotifyStare'] = $this->spotifyState;
+        // $_SESSION['spotifyOptions'] = $this->spotifyOptions;
     }
 
     private function setRedirectionToCallbackSpotify(){

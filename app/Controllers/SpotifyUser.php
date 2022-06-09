@@ -8,7 +8,7 @@ class SpotifyUser extends BaseController
     {
         \Config\Services::session();
         $api = new \SpotifyWebAPI\SpotifyWebAPI();
-        $api->setAccessToken($_SESSION['accessToken']);
+        $api->setAccessToken($_SESSION['spotifyAccessToken']);
         echo '<pre>';
         var_dump($api->me());
         echo '</pre>';
